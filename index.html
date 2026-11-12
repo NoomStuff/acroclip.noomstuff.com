@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/download.js" defer></script>
+    <script src="js/hero-reel.js" defer></script>
+    <script src="js/header.js" defer></script>
+
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            allowNestedScroll: true,
+            anchors: { offset: -72 },
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
+
+    <title>AcroClip</title>
+    <meta name="description" content="Clip it. Watch it. Share it. A free clipping tool with no ads, no account and no AI training on your clips.">
+    <meta name="keywords" content="AcroClip, clipping, game clips, replay buffer, Medal alternative, NoomStuff">
+    <link rel="icon" href="media/icon.svg" type="image/svg+xml">
+
+    <meta property="og:title" content="AcroClip">
+    <meta property="og:description" content="Clip it. Watch it. Share it.">
+    <meta property="og:image" content="https://acroclip.noomstuff.com/media/social-preview.png">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AcroClip">
+    <meta name="twitter:description" content="Clip it. Watch it. Share it.">
+    <meta name="twitter:image" content="https://acroclip.noomstuff.com/media/social-preview.png">
+    <meta name="twitter:creator" content="@NoomStuff">
+</head>
+
+<body>
+    <header id="site-header">
+        <div class="bar">
+            <a href="#" class="brand"><img src="media/icon.svg" alt="" draggable="false">AcroClip</a>
+            <nav aria-label="Site">
+                <a href="https://github.com/NoomStuff/AcroClip" target="_blank" class="button ghost"><span class="icon icon-github"></span><span>GitHub</span></a>
+                <a href="#downloads" class="button primary"><span class="icon icon-download"></span><span>Download</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div id="hero-reel">
+                <video muted playsinline preload="auto" disablePictureInPicture class="active" data-game="Bopl Battle" poster="media/clips/boplbattle.jpg">
+                    <source src="media/clips/boplbattle.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="auto" disablePictureInPicture data-game="Satisfactory" poster="media/clips/satisfactory.jpg">
+                    <source src="media/clips/satisfactory.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="auto" disablePictureInPicture data-game="Risk of Rain 2" poster="media/clips/risk-of-rain.jpg">
+                    <source src="media/clips/risk-of-rain.mp4" type="video/mp4">
+                </video>
+                <video muted playsinline preload="auto" disablePictureInPicture data-game="Palworld" poster="media/clips/palworld.jpg">
+                    <source src="media/clips/palworld.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="hero-content">
+                <img class="hero-logo" src="media/icon.svg" alt="" draggable="false">
+                <h1><span class="word" style="--i: 0">no</span> <span class="word" style="--i: 1">bullshit</span> <span class="word dim" style="--i: 2">clipping</span> <span class="word dim" style="--i: 3">software.</span></h1>
+                <p id="hero-tagline">AcroClip is a simple, powerful & reliable app to take and manage your clips locally.</p>
+                <div class="hero-download">
+                    <a data-download class="button primary large"><span class="icon icon-download"></span><span class="label">Download</span></a>
+                </div>
+            </div>
+
+            <nav id="hero-timeline" aria-label="Game clips"></nav>
+        </section>
+
+        <div id="hero-glow" aria-hidden="true">
+            <div class="glow-fade">
+                <div class="glow-image">
+                    <img class="active" src="media/clips/boplbattle.jpg" alt="">
+                    <img src="media/clips/satisfactory.jpg" alt="">
+                    <img src="media/clips/risk-of-rain.jpg" alt="">
+                    <img src="media/clips/palworld.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <section id="intro">
+            <p>I made AcroClip because a friend wanted a Medal alternative that <em>doesn't train AI on your clips or shove ads in your face.</em></p>
+            <p class="signature">NoomStuff</p>
+        </section>
+
+        <section id="steps">
+            <article class="step">
+                <div class="step-text">
+                    <h2>Clip it</h2>
+                    <p>Capture what just happened so you never miss a moment.</p>
+                    <p>Pick any screen or a window, or set the source to Auto and AcroClip picks up your game when it starts.</p>
+                    <p class="subtext">Clip with <kbd>Alt</kbd><kbd>C</kbd><span>or whatever you prefer</span></p>
+                </div>
+                <figure class="media">
+                    <div class="media-glow" aria-hidden="true"><img class="active" src="media/app-capture.png" alt=""></div>
+                    <div class="media-card"><img src="media/app-capture.png" alt="AcroClip capturing a game" draggable="false"></div>
+                </figure>
+            </article>
+
+            <article class="step reverse">
+                <div class="step-text">
+                    <h2>Manage your Collection</h2>
+                    <p>Clips land in your library. Group them by game, tag them, sort them into folders, sift and serach through them however you like.</p>
+                    <p>They're plain MP4s in a folder you pick, so they keep working without AcroClip.</p>
+                </div>
+                <figure class="media">
+                    <div class="media-glow" aria-hidden="true"><img class="active" src="media/app-library.png" alt=""></div>
+                    <div class="media-card"><img src="media/app-library.png" alt="AcroClip library with clips from several games" draggable="false"></div>
+                </figure>
+            </article>
+
+            <article class="step">
+                <div class="step-text">
+                    <h2>Rewatch, Trim & Share</h2>
+                    <p>Quickly watch anything from your library with the built-in player.</p>
+                    <p>Trim the clips to the parts you want, and then share them with others.</p>
+                    <p>You can also create shareables; smaller versions of your clips that are easier to share.</p>
+                </div>
+                <figure class="media">
+                    <div class="media-glow" aria-hidden="true"><img class="active" src="media/app-shareable.png" alt=""></div>
+                    <div class="media-card"><img src="media/app-shareable.png" alt="A 20 MB shareable made from a Risk of Rain 2 clip" draggable="false"></div>
+                </figure>
+            </article>
+        </section>
+
+        <section id="compare">
+            <h2>AcroClip vs the usual</h2>
+            <div class="compare-table">
+                <div class="compare-row heading">
+                    <span></span>
+                    <span>AcroClip</span>
+                    <span>Other clippers</span>
+                </div>
+                <div class="compare-row">
+                    <span>Ads</span>
+                    <span class="good"><span class="icon icon-check"></span>None</span>
+                    <span class="bad"><span class="icon icon-x"></span>Plenty</span>
+                </div>
+                <div class="compare-row">
+                    <span>Account</span>
+                    <span class="good"><span class="icon icon-check"></span>Not needed</span>
+                    <span class="bad"><span class="icon icon-x"></span>Sign in to continue</span>
+                </div>
+                <div class="compare-row">
+                    <span>AI training on your clips</span>
+                    <span class="good"><span class="icon icon-check"></span>Never</span>
+                    <span class="bad"><span class="icon icon-circle-question-mark"></span>Read the ToS and find out</span>
+                </div>
+                <div class="compare-row">
+                    <span>Your clips</span>
+                    <span class="good"><span class="icon icon-check"></span>MP4s in your folder</span>
+                    <span class="bad"><span class="icon icon-circle-question-mark"></span>Somewhere</span>
+                </div>
+                <div class="compare-row">
+                    <span>Source code</span>
+                    <span class="good"><span class="icon icon-check"></span>GPL-3.0 on GitHub</span>
+                    <span class="bad"><span class="icon icon-x"></span>Trust me bro</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="downloads">
+            <div class="download-card">
+                <img class="download-icon" src="media/icon.svg" alt="" draggable="false">
+                <h2>Ready to try AcroClip?</h2>
+                <p>It's free. Still not convinced? Try reading <a href="/">this again</a>.</p>
+                <div class="platforms">
+                    <article class="platform" data-platform="windows">
+                        <h4><span class="icon icon-windows"></span>Windows</h4>
+                        <div class="button-group">
+                            <a data-file="AcroClip-windows-x64-setup.exe" class="button primary">Installer</a>
+                            <a data-file="AcroClip-windows-x64-portable.exe" class="button">Portable</a>
+                        </div>
+                    </article>
+                    <article class="platform" data-platform="macos">
+                        <h4><span class="icon icon-apple"></span>macOS</h4>
+                        <div class="button-group">
+                            <a data-file="AcroClip-macos-arm64.dmg" class="button primary">Apple Silicon</a>
+                            <a data-file="AcroClip-macos-x64.dmg" class="button">Intel</a>
+                        </div>
+                    </article>
+                    <article class="platform" data-platform="linux">
+                        <h4><span class="icon icon-linux"></span>Linux</h4>
+                        <div class="button-group">
+                            <a data-file="AcroClip-linux-x64.AppImage" class="button primary">x64</a>
+                            <a data-file="AcroClip-linux-arm64.AppImage" class="button">ARM64</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made by <a href="https://noomstuff.com" target="_blank">NoomStuff</a>. Open source under <a href="https://github.com/NoomStuff/AcroClip/blob/main/LICENSE" target="_blank">GPL-3.0</a>, PRs welcome.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+/* ===== Icons ===== */
+.icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    mask: var(--icon) center / contain no-repeat;
+}
+
+.icon-download { --icon: url("../media/icons/download.svg"); }
+.icon-github { --icon: url("../media/icons/github.svg"); }
+.icon-check { --icon: url("../media/icons/check.svg"); }
+.icon-x { --icon: url("../media/icons/x.svg"); }
+.icon-circle-question-mark { --icon: url("../media/icons/circle-question-mark.svg"); }
+.icon-windows { --icon: url("../media/icons/windows.svg"); }
+.icon-apple { --icon: url("../media/icons/apple.svg"); }
+.icon-linux { --icon: url("../media/icons/linux.svg"); }
+
+
+/* ===== Keys ===== */
+kbd {
+    display: inline-grid;
+    place-items: center;
+    min-width: 28px;
+    height: 26px;
+    padding: 0 8px;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: var(--text);
+    background: var(--raised);
+    border-radius: 7px;
+    box-shadow: inset 0 -2px 0 #00000059, 0 0 0 1px var(--line-strong);
+}
+
+
+/* ===== Media card ===== */
+/* A blurred copy of the picture sits behind the card, like bias lighting behind a monitor. */
+.media {
+    position: relative;
+    isolation: isolate;
+}
+
+.media-glow {
+    position: absolute;
+    inset: 8% 6% -2%;
+    z-index: -1;
+    overflow: hidden;
+    filter: blur(64px) saturate(1.5);
+    opacity: 0.32;
+    pointer-events: none;
+}
+
+.media-glow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 900ms ease;
+}
+
+.media-glow img.active {
+    opacity: 1;
+}
+
+.media-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 0 1px var(--line-strong), 0 30px 60px -30px #000000cc;
+}
+
+.media-card>img {
+    width: 100%;
+    height: auto;
+}
